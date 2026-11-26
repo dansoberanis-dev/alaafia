@@ -312,6 +312,25 @@
     item.addEventListener('click', function () { abrirFoto(item); });
   });
   if (lightbox) {
+    /* arrastar com o dedo para trocar de foto */
+    var toqueX = null;
+    var toqueY = null;
+    lightbox.addEventListener('touchstart', function (e) {
+      if (e.touches.length !== 1) { toqueX = null; return; }
+      toqueX = e.touches[0].clientX;
+      toqueY = e.touches[0].clientY;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', function (e) {
+      if (toqueX === null) return;
+      var dx = e.changedTouches[0].clientX - toqueX;
+      var dy = e.changedTouches[0].clientY - toqueY;
+      toqueX = null;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+        navegarFoto(dx < 0 ? 1 : -1);
+      }
+    }, { passive: true });
+    lightbox.addEventListener('touchcancel', function () { toqueX = null; }, { passive: true });
+
     lbFechar.addEventListener('click', fecharFoto);
     lbPrev.addEventListener('click', function () { navegarFoto(-1); });
     lbNext.addEventListener('click', function () { navegarFoto(1); });
