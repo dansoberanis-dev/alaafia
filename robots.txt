@@ -3,4 +3,4 @@ Allow: /
 Disallow: /obrigado.html
 Disallow: /404.html
 
-Sitemap: https://www.casaalaafia.com.br/sitemap.xml
+Sitemap: https://alaafiacasa.vercel.app/sitemap.xml
