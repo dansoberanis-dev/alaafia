@@ -1,0 +1,15 @@
+{
+  "name": "Casa Cultural Àlàáfíà",
+  "short_name": "Àlàáfíà",
+  "description": "Quilombo urbano, cultura afro-brasileira e gastronomia de axé no Centro Histórico de Curitiba.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0A4227",
+  "theme_color": "#0A4227",
+  "icons": [
+    { "src": "assets/img/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/img/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
